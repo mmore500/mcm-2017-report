@@ -1,0 +1,28 @@
+\section{Model Assessment} \label{sec:model_assessment}
+
+\subsection{Micro Model Sensitivity Analysis}
+We performed a sensitivity analysis on our micro model, changing (1) the length of of the circular track and (2) the probability that a self-driven car will spontaneously slow down (all human-driven cars have a much higher probability of this "imperfect driving").  In the original paper from which we developed this model, the authors used a track length of 10,000 units.  We were able to replicate the traffic effects that the authors observed using a track length of 500 units, although for our sensitivity analysis, we doubled the track length and observed an inconsequential change in the model output.  Furthermore, the traffic-flow-versus-density plot changes insignificantly for variation of the probability that a self-driven car will slow down without reason.  We set this parameter to 5\% in our micro model, which we believe to be conservative for a self-driving car, but our sensitivity study confirms that increasing this value to 10\% or decreasing it to 0\% do not affect the model outcome.  There are no other non-variable parameters in the model, so the results of this analysis suggest that we are using a robust, if simple, model.
+
+\subsection{Strengths}
+    \begin{itemize}
+        \item By approaching the problem with both a micro and a macro model, we are able to apply relatively straightforward simulations to a more complicated problem.
+        \item The model provides a simple, but reasonable, simulation of traffic, and given the success of our validation study, we are confident that it produces reasonable predictions for how self-driving cars will impact traffic, for which there is not yet any empirical data.
+        \item The micro model produces flux, velocity, and density data that are consistent with previous research \cite{Nagel1992ATraffic},\cite{Dym2004PrinciplesModeling}.
+        \item The model is not computationally intensive, so it does not require sophisticated hardware or specialized resources to replicate our work.
+        \item The model produces travel times for normal traffic flow on popular routes that are typically accurate to within 10\% of the actual average travel time.
+    \end{itemize}
+\subsection{Weaknesses}
+    \begin{itemize}
+        \item The macro model does not give quantitatively accurate travel times for peak periods of travel.
+        \item At extreme traffic loads, the distribution of traffic delays across the highway system does not closely resemble those reported by WSDOT.
+        \item Our micro/macro model requires that we treat stretches of road between mile-markers as having constant density.  This assumption precludes more nuanced modeling of traffic.
+        \item In the micro model, self-driving cars are assigned a reduced probability of ``imperfect driving,'' but they do not communicate with other cars on the road.
+        \item The micro model is only validated insofar as the traffic flux-versus-density curve produced by our data is consistent with the literature.  The micro model is not expressly compared to empirical data.
+    \end{itemize}
+\subsection{Improvements}
+    \begin{itemize}
+        \item Our simulation produces good data for average traffic conditions, but is less reliable for peak traffic conditions.  This is unfortunate since we are most interested in how self-driving cars will change traffic dynamics at high traffic densities.  Our model should be modified to produce more representative values for travel time at peak travel times.  This adjustment would lend credibility to predictions about the effect of percentage of self-driving cars on traffic patterns. 
+        \item The macro model should be extended to consider the effects of catastrophic incidents such as breakdowns and collisions on traffic dynamics, in particular, the ability of traffic flow to recover at different levels of self-driving traffic once such blockages are cleared.
+        \item Our model would be stronger if it treated the road as a continuous stretch, rather than segments with uniform traffic density.  We could perhaps use PDEs (rather than a system of ODEs) to provide this additional detail.
+        \item While our micro model accounts for self-driving cars being more predictable, we should more precisely define and implement inter-car communication that would allow self-driving cars to know more about what the vehicles in its environment are doing.
+    \end{itemize}

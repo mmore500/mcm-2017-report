@@ -1,0 +1,39 @@
+
+\section{Dedicated Lanes for Self-Driving Cars} \label{sec:discussion}
+
+The decision to use a dedicated lane for self-driving cars relies heavily on the percentage of cars that are self-driving. Here we derive a simple way to check if adding a dedicated lane or lanes would reduce traffic, and if so, how many lanes to add.
+
+\subsection{Variables}
+\begin{itemize}
+	\item $c$: the concentration or percentage of cars which are self-driven.
+    \item $\rho_{s}$: the effective density of self-driven cars
+    \item $\rho_{s}^{cr}$: the ``critical density", or the density at which flux is maximized for self-driven cars
+    \item $\rho_{h}$: the effective density of human-driven cars
+    \item $\rho_{h}^{cr}$ the ``critical density'' for human-driven cars.
+    \item $N_{LS}$ The number of lanes to be dedicated to self-driven cars.
+    \item $D_i^m$: The maximum number of cars in a road segment of length $D_i$, i.e. bumper to bumper traffic.
+\end{itemize}
+
+\subsection{Discussion}
+Recall that the ``lane length'' of the $i$th road segment $L_i$ is defined as the product $N_{Li}D_i$ of the number of lanes and the length of the segment. Then the number of self-driven cars in this road segment is given by $cN_i$, while the number of human-driven cars is $(1-c)N_i$. Similarly, if $N_{LS}$ lanes are dedicated to self-driving cars, $N_{Li}-N_{LS}$ lanes are dedicated to human driven cars. To normalize units of density we will use maximum number of cars in road segment $i$, $D_i^m$. We can then look at the effective densities for self-driven cars
+\begin{equation*}
+	\rho_s = \frac{cN_i}{D_i^mN_{LS}},
+\end{equation*}
+and human driven cars
+\begin{equation*}
+\rho_h = \frac{(1-c)N_i}{D_i^m(N_{Li}-N_{LS})}.
+\end{equation*}
+By requiring that the effective densities of self-driving cars and human-driven cars be below their respective critical densities, in other words
+\begin{equation*}
+	\frac{cN_i}{D_i^mN_{LS}} \leq \rho_{s}^{cr}
+\end{equation*}
+and
+\begin{equation*}
+    \frac{(1-c)N_i}{D_i^m(N_{Li}-N_{LS})} \leq \rho_{h}^{cr},
+\end{equation*}
+we can solve for $N_{LS}$. Letting $\rho_e=\frac{N_i}{D_i^m}$, we get the following inequality:
+\begin{equation}
+	%\frac{cN_i}{\rho_{s}^{cr}D_i^m} \leq N_{LS} \leq N_{Li} - \frac{(1-c)N_i}{\rho_{h}^{cr}D_i^m}.
+    c\frac{\rho_e}{\rho_{s}^{cr}} \leq N_{LS} \leq N_{Li} - (1-c)\frac{\rho_e}{\rho_{h}^{cr}}.
+\end{equation}
+Our results suggest that even at high density traffic and a low concentration of self-driving cars, for three or more lanes, designating at least one lane for self-driving cars will reduce overall traffic.

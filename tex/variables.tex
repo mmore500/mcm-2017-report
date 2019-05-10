@@ -1,0 +1,41 @@
+\section{Variables and Definition of Standard Conditions} \label{sec:vars_defns}
+
+
+\subsection{List of Variables}
+
+\subsubsection{Micro Model}
+\begin{itemize}
+	\item $v_i$: the velocity of the $i$th car
+    \item $g$: the minimum allowable distance between a car and the car ahead.
+%     \item $g_s$:the minimum allowable distance between a self-driven car and the car ahead.
+    \item $p$: the probability that a car will randomly decrease in velocity.
+%     \item $p_s$: the probability that a self-driven car will randomly decrease in velocity.
+\end{itemize}
+
+\subsubsection{Macro Model}
+\begin{itemize}
+	\item $D_i$, units [miles]: the distance of the $i$th road segment
+    \item $N_i$, units [cars]: the total number of cars on the $i$th road segment
+    \item $V_i$, units [miles/hour]: the velocity of cars on the $i$th road segment
+    \item $F_i$, units [cars/hour]: the flux of cars on the $i$th road segment
+    \item $N_{Li}$, unitless: the number of lanes on the $i$th road segment
+    \item $L_i$, units [miles]: the distance of "lane miles" on the $i$th road segment
+    \item $\Delta C_i$, units [cars/hour]: the rate at which cars drive onto the $i$th road segment (or off the $(i - 1)$th road segment) 
+    \item $\rho_i$, units [cars/mile]: the effective density of cars over the total length of lanes present $i$th road segment
+    \item $\hat{\rho}_i$, units [cars/mile]: the density of cars on the $i$th road segment, neglecting the presence of multiple traffic lanes
+\end{itemize}
+
+\subsection{Definition of Standard Conditions}
+When running our simulations, we defined the following set of standard conditions:
+
+\subsubsection{Micro Model}
+\begin{itemize}
+\item The maximum velocity for cars was set to 5 units.
+\end{itemize}
+
+\subsubsection{Macro Model}
+\begin{itemize}
+\item On average, $8\%$ of the daily traffic volume occurs during peak travel hours. Thus, we model non-peak traffic conditions as having a traffic load equivalent to ADTC and peak traffic conditions as experiencing a traffic load equivalent to $192\%$ ADT.
+\item The nominal speed limit for all of the roads we use in our model is $60$ miles per hour. We assume that traffic leaves the system at the end of each highway at $50$ miles per hour.
+\end{itemize}
+

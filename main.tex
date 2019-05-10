@@ -1,0 +1,69 @@
+\documentclass[12pt]{scrartcl}
+
+\makeatletter
+ \title{Silence of the Jams}
+ \subtitle{The Effects of Self-Driving Cars on Traffic Patterns in the Puget Sound Region}
+ \author{Team \# 57313}  \let\Author\@author
+ \date{January 23, 2017}
+\makeatother
+
+% This is necessary for package compatibility
+\makeatletter
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\makeatother\makeatletter
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\makeatother
+
+\input{imports.tex}
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\rhead{Page {\thepage} of \lastpageref{LastPages}}
+\lhead{\Author}
+
+\begin{document}
+
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\input{tex/summary.tex}
+
+\input{tex/introduction.tex}
+
+\input{tex/assumptions.tex}
+
+\input{tex/variables.tex}
+
+\input{tex/model.tex}
+
+\input{tex/results.tex}
+
+\input{tex/assessment.tex}
+
+\input{tex/discussion.tex}
+
+\input{tex/recommendations.tex}
+
+\newpage
+\bibliography{Mendeley_UPSMCM2017}
+\bibliographystyle{IEEEtran}
+
+\end{document}
